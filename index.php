@@ -65,18 +65,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
-    <title>PHP Hotel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>PHP Hotels</title>
 </head>
 <body>
     <div class="container">
+    <h1 class="text-center mt-5 fw-bold">PHP Hotels</h1>
     <div id="form_container">
     <form action="<?php $_SERVER['PHP_SELF']?>" method="GET" class="mt-5">
-        <select name="search" id="search" class="form-select">
-            <option selected>Choose</option>
+        <select name="search" id="search" class="form-select text-center">
+            <option selected>Do you desire a parking?</option>
             <option value="parking">Hotel with a Parking</option>
             <option value="no_parking">No Parking</option>
         </select>
-        <button type="submit" class="btn btn-light mt-3">Search!</button>
+        <button type="submit" class="btn btn-outline-dark mt-3">Search!</button>
     </form>
     </div>
 

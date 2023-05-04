@@ -1,11 +1,76 @@
+/*****************************************************
+CSS GENERAL
+*****************************************************/
+
+:root {
+    --thead_table_bg: #466FA6;
+    --thead_table_bg-hover: #9FADBF;
+    --tbody_table_bg: #8C7E51;
+    --tbody_table_bg-hover: #517EA6;
+    --h1_color: #402A38;
+    --select_bg: #f2d979;
+}
+
+* {
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+body {
+    background-image:
+        linear-gradient(to left,
+            transparent 0px,
+            transparent 20px,
+            rgba(140, 99, 74, 0.08) 20px,
+            rgba(140, 99, 74, 0.08) 40px),
+        linear-gradient(to bottom,
+            transparent 0px,
+            transparent 20px,
+            rgba(217, 187, 160, 0.08) 20px,
+            rgba(217, 187, 160, 0.08) 40px);
+    background-size: 40px 40px;
+}
+
+/*****************************************************
+CSS "PHP Hotels"
+*****************************************************/
+
 .table {
-    width: 30%;
+    width: 85%;
+    cursor: pointer;
+}
+
+.table thead tr th {
+    background-color: var(--thead_table_bg);
+}
+
+.table thead tr th:hover {
+    background-color: var(--thead_table_bg-hover);
+    color: black;
+}
+
+.table tbody tr th {
+    background-color: var(--tbody_table_bg);
+}
+
+.table tbody tr th:hover {
+    background-color: var(--tbody_table_bg-hover);
 }
 
 .form-select {
-    width: 40%;
+    width: 43%;
+    cursor: pointer;
+    background-color: var(--select_bg);
 }
 
 #form_container {
     margin-left: 30rem;
+}
+
+button {
+    margin-left: 7.5rem;
+    cursor: pointer;
+}
+
+h1 {
+    color: var(--h1_color);
 }
