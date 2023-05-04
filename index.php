@@ -41,6 +41,18 @@
             'city' => 'Trieste (TS)'
         ]
     ];
+
+    if (!empty($_GET['search'])) {
+        $search = $_GET['search'];
+        $filtered_hotels = [];
+        foreach ($hotels as $hotel) {
+            if ($hotel['parking'] == $search) {
+                $filtered_hotels[] = $hotel;
+            }
+        }
+    } else {
+        $filtered_hotels = $hotels;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -55,6 +67,17 @@
 </head>
 <body>
     <div class="container">
+    <div id="form_container">
+    <form action="<?php echo $_SERVER['PHP_SELF']?>" methods="GET" class="mt-5">
+        <select name="search" class="form-select">
+            <option selected>Choose</option>
+            <option value="parking">Hotel with a Parking</option>
+            <!-- <option value="parking">No Parking</option> -->
+        </select>
+        <button type="submit" class="btn btn-light mt-3">Search!</button>
+    </form>
+    </div>
+
     <table class="table table-dark table-striped mx-auto mt-5 mb-5">
     <?php foreach ($hotels as $hotel) { ?>
         <thead>
