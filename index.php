@@ -46,7 +46,9 @@
         $search = $_GET['search'];
         $filtered_hotels = [];
         foreach ($hotels as $hotel) {
-            if ($hotel['parking'] == $search) {
+            if ($search == 'parking' && $hotel['parking'] == true) {
+                $filtered_hotels[] = $hotel;
+            } elseif ($search == 'no_parking' && $hotel['parking'] == false) {
                 $filtered_hotels[] = $hotel;
             }
         }
@@ -68,18 +70,18 @@
 <body>
     <div class="container">
     <div id="form_container">
-    <form action="<?php echo $_SERVER['PHP_SELF']?>" methods="GET" class="mt-5">
-        <select name="search" class="form-select">
+    <form action="<?php $_SERVER['PHP_SELF']?>" method="GET" class="mt-5">
+        <select name="search" id="search" class="form-select">
             <option selected>Choose</option>
             <option value="parking">Hotel with a Parking</option>
-            <!-- <option value="parking">No Parking</option> -->
+            <option value="no_parking">No Parking</option>
         </select>
         <button type="submit" class="btn btn-light mt-3">Search!</button>
     </form>
     </div>
 
     <table class="table table-dark table-striped mx-auto mt-5 mb-5">
-    <?php foreach ($hotels as $hotel) { ?>
+    <?php foreach ($filtered_hotels as $hotel) { ?>
         <thead>
         <tr>
             <th scope="col">Name:</th>
