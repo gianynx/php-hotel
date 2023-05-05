@@ -50,10 +50,10 @@
                 $filtered_hotels[] = $hotel;
             } elseif ($search == 'no_parking' && $hotel['parking'] == false) {
                 $filtered_hotels[] = $hotel;
+            } elseif ($search == 'all') {
+                $filtered_hotels[] = $hotel;
             }
         }
-    } else {
-        $filtered_hotels = $hotels;
     }
 ?>
 
@@ -76,7 +76,7 @@
     <div id="form_container">
     <form action="<?php $_SERVER['PHP_SELF']?>" method="GET" class="mt-5">
         <select name="search" id="search" class="form-select text-center">
-            <option selected>Do you desire a parking?</option>
+            <option value="all">All</option>
             <option value="parking">Hotel with a Parking</option>
             <option value="no_parking">No Parking</option>
         </select>
