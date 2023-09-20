@@ -72,46 +72,46 @@
 </head>
 <body>
     <div class="container">
-    <h1 class="text-center mt-5 fw-bold">PHP Hotels</h1>
-    <div id="form_container">
-    <form action="<?php $_SERVER['PHP_SELF']?>" method="GET" class="mt-5">
-        <select name="search" id="search" class="form-select text-center">
-            <option value="all">All</option>
-            <option value="parking">Hotel with a Parking</option>
-            <option value="no_parking">No Parking</option>
-        </select>
-        <button type="submit" class="btn btn-outline-dark mt-3">Search!</button>
-    </form>
-    </div>
+        <h1 class="text-center mt-5 fw-bold">PHP Hotels</h1>
+        <div id="form_container">
+            <form action="<?php $_SERVER['PHP_SELF']?>" method="GET" class="mt-5">
+                <select name="search" id="search" class="form-select text-center">
+                    <option value="all">All</option>
+                    <option value="parking">Hotel with a Parking</option>
+                    <option value="no_parking">No Parking</option>
+                </select>
+                <button type="submit" class="btn btn-outline-dark mt-3">Search!</button>
+            </form>
+        </div>
 
-    <table class="table table-dark table-striped mx-auto mt-5 mb-5">
-    <?php foreach ($filtered_hotels as $hotel) { ?>
-        <thead>
-        <tr>
-            <th scope="col">Name:</th>
-            <th scope="col"><?php echo $hotel['name']?></th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <th scope="row">City:</th>
-            <td><?php echo $hotel['city']?></td>
-        </tr>
-        <tr>
-            <th scope="row">Description:</th>
-            <td><?php echo $hotel['description']?></td>
-        </tr>
-        <tr>
-            <th scope="row">Vote:</th>
-            <td><?php echo $hotel['vote']?></td>
-        </tr>
-        <tr>
-            <th scope="row">Distance to center:</th>
-            <td><?php echo $hotel['distance_to_center']?>km</td>
-        </tr>
-        </tbody>
-    <?php } ?>
-    </table>
+        <table class="table table-dark table-striped mx-auto mt-5 mb-5">
+        <?php foreach ($filtered_hotels as $hotel) { ?>
+            <thead>
+                <tr>
+                    <th scope="col">Name:</th>
+                    <th scope="col"><?php echo $hotel['name']?></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">City:</th>
+                    <td><?php echo $hotel['city']?></td>
+                </tr>
+                <tr>
+                    <th scope="row">Description:</th>
+                    <td><?php echo $hotel['description']?></td>
+                </tr>
+                <tr>
+                    <th scope="row">Vote:</th>
+                    <td><?php echo $hotel['vote']?></td>
+                </tr>
+                <tr>
+                    <th scope="row">Distance to center:</th>
+                    <td><?php echo $hotel['distance_to_center']?>km</td>
+                </tr>
+            </tbody>
+        <?php } ?>
+        </table>
     </div>
 
 
